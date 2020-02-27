@@ -1,0 +1,95 @@
+event_homepage:
+    path:     /
+    defaults: { _controller: EventBundle:Default:index }
+event_ajoutClub:
+    path:     /ajoutClub
+    defaults: { _controller: EventBundle:Club:ajoutClub }
+event_afficheClub:
+     path:     /afficheClub
+     defaults: { _controller: EventBundle:Club:afficheClub }
+event_modifieClub:
+     path:     /modifieClub/{id}
+     defaults: { _controller: EventBundle:Club:modifieClub }
+event_supprimerClub:
+     path:     /supprimerClub/{id}
+     defaults: { _controller: EventBundle:Club:supprimerClub }
+clubs_trier:
+     path:     /trier
+     defaults: { _controller: EventBundle:Club:trier }
+event_ajoutEvent:
+     path:     /ajoutEvent
+     defaults: { _controller: EventBundle:Event:ajoutEvent }
+event_afficheEvent:
+     path:     /afficheEvent
+     defaults: { _controller: EventBundle:Event:afficheEvent }
+event_modifieEvent:
+      path:     /modifieEvent/{id}
+      defaults: { _controller: EventBundle:Event:modifieEvent }
+event_supprimeEvent:
+      path:     /supprimeEvent/{id}
+      defaults: { _controller: EventBundle:Event:supprimeEvent }
+event_UserEvent:
+  path:     /UserEvent
+  defaults: { _controller: EventBundle:Event:UserEvent }
+navig:
+    path:     /navig
+    defaults: { _controller: EventBundle:Event:navig }
+
+search:
+    path:     /search
+    defaults: { _controller: EventBundle:Event:search }
+
+participation:
+    path:     /participation
+    defaults: { _controller: EventBundle:Participation:index }
+
+participer_event:
+     path:    /participer/{id}
+     defaults: { _controller: EventBundle:Participation:participer }
+     
+
+make_admin:
+     path:    /makeadmin/{id}
+     defaults: { _controller: EventBundle:Participation:makeAdmin }
+
+search_date_event :
+     path:    /searchdate
+     defaults: { _controller: EventBundle:Event:searchdate }
+
+
+
+search_recents_event :
+     path:    /recents
+     defaults: { _controller: EventBundle:Event:recentsEvents }
+
+
+
+search_avenir_event :
+     path:    /avenir
+     defaults: { _controller: EventBundle:Event:venirEvents }
+
+
+event_stripe :
+     path:    /stripe/{id}
+     defaults: { _controller: EventBundle:Participation:part }
+
+clubs_homepage:
+    path:     /clubs
+    defaults: { _controller: EventBundle:Club:index }
+
+clubs_rejoindre:
+    path:     /club/rej/{id}
+    defaults: { _controller: EventBundle:Club:rejoindre }
+
+affiche_insc :
+     path:     /afficheinscriptions
+     defaults: { _controller: EventBundle:Default:afficheinscriptions }
+     
+
+valide_insc :
+     path:     /valide/{id}
+     defaults: { _controller: EventBundle:Default:valideinsc }
+
+refue_insc :
+     path:     /refue/{id}
+     defaults: { _controller: EventBundle:Default:refueinsc }
