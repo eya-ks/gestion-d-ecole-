@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+{% block changer %}
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Simple Markers</title>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 50%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            width: 300px;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+{% block body %}
+    <div id="map"></div>
+    <script>
+
+        function initMap() {
+            var myLatLng = {lat: 36.899048, lng:  10.18909};
+
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 9,
+                center: myLatLng
+            });
+
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'MySchool'
+            });
+
+
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAk2RbxLgad0YKftcI1nPZ5wrQc7IHcnGA
+            &callback=initMap">
+    </script>
+
+{% endblock %}
+</body>
+{% endblock %}
