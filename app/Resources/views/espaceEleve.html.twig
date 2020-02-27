@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MySchool</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="WebUni Education Template">
+    <meta name="keywords" content="webuni, education, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link href={{ asset('img/favicon.ico') }} rel="shortcuticon"/>
+
+    <!-- Google Fonts -->
+    <link href={{ asset('https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i') }} rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href={{ asset('css/bootstrap.min.css') }}/>
+    <link rel="stylesheet" href={{ asset('css/font-awesome.min.css') }}/>
+    <link rel="stylesheet" href={{ asset('css/owl.carousel.css') }}/>
+    <link rel="stylesheet" href={{ asset('css/style.css') }}/>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    <link href="../asset/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    3<link href="../asset/demo/demo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset("css/bootstrap.min.css")}}" />
+
+
+
+
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+{% block header %}
+<!-- Header section -->
+<header class="header-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3">
+                <div class="site-logo">
+                    <img src="img/logo.png" alt="">
+                </div>
+                <div class="nav-switch">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9">
+                <a href="" class="site-btn header-btn">Déconneter</a>
+                <nav class="main-menu">
+                    <ul>
+                        <li><a href="index.html">Acceuil</a></li>
+                        <li><a href="presentation.html" >MySchool</a></li>
+                        <li><a href="evenements.html">Evenements</a></li>
+                        <li><a href="actualites.html">Actualités</a></li>
+                        <li><a href="galerie.html">galerie</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </div>
+</header>
+<!-- Header section end -->
+
+{% endblock %}
+<!-- Page info -->
+<div class="page-info-section set-bg" data-setbg="img/eleves.jpg">
+    <div class="container">
+        <div class="site-breadcrumb">
+
+            <span><h1> Espace Eléve ></h1></span><br>
+            <span><h3> bienvenue sur votre espace Arij </h3></span>
+        </div>
+    </div>
+</div>
+<!-- Page info end -->
+
+{% block search %}
+<!-- search section -->
+<section class="search-section ss-other-page">
+    <div class="container">
+        <div class="search-warp">
+            <div class="section-title text-white">
+                <h2><span>rechercher </span></h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <!-- search form -->
+                    <form class="course-search-form">
+                        <input type="text" placeholder="nom">
+                        <input type="text" class="last-m" placeholder="Categorie">
+                        <button class="site-btn btn-dark">rechercher</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- search section end -->
+{% endblock %}
+
+<!-- Page -->
+<section class="elements-page spad pb-0">
+    <div class="container">
+        <div class="element">
+            <h2 class="e-title"></h2>
+            <a href="#" class="site-btn mr-3 mb-3 mb-md-0">emploi du temps</a>
+            <a href="#" class="site-btn btn-dark mr-3 mb-3 mb-md-0">absences</a>
+            <a href="#" class="site-btn btn-fade">punitions</a>
+            <a href="#" class="site-btn btn-fade">vie éleve</a>
+            <a href={{ path('note_index') }} class="site-btn btn-fade">notes</a>
+            <a href="#" class="site-btn btn-fade">Bulletin</a>
+            <a href="#" class="site-btn btn-fade">réclammations</a>
+        </div>
+        {% block contenu %}
+        <!-- Element -->
+        <div class="element">
+            <h2 class="e-title">Actualités</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <!-- Accordions -->
+                    <div id="accordion" class="accordion-area">
+                        <div class="panel">
+                            <div class="panel-header" id="headingOne">
+                                <button class="panel-link" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">journee internationale de l'education</button>
+                            </div>
+                            <div id="collapse1" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="panel-body">
+                                    <p>   </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="panel-header" id="headingTwo">
+                                <button class="panel-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2"></button>
+                            </div>
+                            <div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="panel-body">
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <!-- Tabs -->
+                <div class="tab-element">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="1-tab" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="2-tab" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="3-tab" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false"></a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <!-- single tab content -->
+                        <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+                            <p></p>
+                        </div>
+                        <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
+                            <p></p>
+                        </div>
+                        <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
+                            <p>  </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Element -->
+    <div class="element">
+        <h2 class="e-title">Loaders</h2>
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 cp-item">
+                <div class="circle-progress" data-cpid="id-1" data-cpvalue="75" data-cpcolor="#e82154" data-cptitle="New Students"></div>
+            </div>
+            <div class="col-lg-3 col-sm-6 cp-item">
+                <div class="circle-progress" data-cpid="id-2" data-cpvalue="83" data-cpcolor="#e82154" data-cptitle="New Teachers"></div>
+            </div>
+            <div class="col-lg-3 col-sm-6 cp-item">
+                <div class="circle-progress" data-cpid="id-3" data-cpvalue="25" data-cpcolor="#e82154" data-cptitle="Creativity"></div>
+            </div>
+            <div class="col-lg-3 col-sm-6 cp-item">
+                <div class="circle-progress" data-cpid="id-4" data-cpvalue="95" data-cpcolor="#e82154" data-cptitle="Prestige"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="element">
+        <h2 class="e-title">Icon Boxes</h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 icon-box">
+                <h5><span>01.</span></h5>
+                <p>uuuuuuuuuuuu</p>
+            </div>
+            <div class="col-lg-4 col-md-6 icon-box">
+                <h5><span>02.</span></h5>
+                <p> </p>
+            </div>
+            <div class="col-lg-4 col-md-6 icon-box">
+                <h5><span>03.</span></h5>
+                <p> </p>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!-- Page end -->
+
+{% endblock %}
+{% block footer %}
+<!-- footer section -->
+<footer class="footer-section spad pb-0">
+    <div class="footer-top">
+        <div class="footer-warp">
+            <div class="row">
+                <div class="widget-item">
+                    <h3>CONTACT</h3>
+                    <ul class="contact-list">
+                        <li class="adress"> ghazela<br>ariana MI 48226</li>
+                        <li class="phone">+(216) 71 654 987</li>
+                        <li class="email">contact@MySchool.com</li>
+                    </ul>
+                </div>
+                <div class="widget-item">
+                    <h3>MENU</h3>
+                    <ul>
+
+                        <li class="acceuil"><a href="index.html">ACCEUIL</a></li>
+                        <li class="ecole"><a href="#">ECOLE</a></li>
+                        <li class="events1"><a href="#">EVENEMENTS</a></li>
+                        <li class="actualites"><a href="#">GALEIRE</a></li>
+                        <li class="vie élève"><a href="#">VIE ELEVE</a></li>
+                        <li class="contact"><a href="#">CONTACT</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="widget-item">
+                    <h3>NEWSLETTER</h3>
+                    <p>Découvrez les newsletters </p>
+                    <form class="footer-newslatter">
+                        <input type="email" placeholder="E-mail">
+                        <button class="site-btn">rejoindre</button>
+                        <p>Vous recevrez régulièrement toutes nos actualités sur votre boîte de réception.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="footer-warp">
+            <ul class="footer-menu">
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Register</a></li>
+                <li><a href="#">Privacy</a></li>
+            </ul>
+            <div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+        </div>
+    </div>
+</footer>
+<!-- footer section end -->
+{% endblock %}
+
+<!--====== Javascripts & Jquery ======-->
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/mixitup.min.js"></script>
+<script src="js/circle-progress.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

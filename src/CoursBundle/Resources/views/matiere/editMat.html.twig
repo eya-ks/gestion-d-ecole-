@@ -1,0 +1,43 @@
+{% extends 'default/index.html.twig' %}
+{% block  changer  %}
+    <br>
+    <br>
+    <br>
+    <center>
+
+        <h1> Modifier une matiere </h1>
+
+    </center>
+    <br>
+    <br>
+    <br>
+    <center>
+        {{ form_start(form) }}
+        <table>
+            <tr>
+                <td>  id matiere:</td> <td> {{ form_widget(form.idMat) }}</td>
+            </tr>
+            <tr>
+                <td>  Nom matiere:</td> <td> {{ form_widget(form.nomMat) }}</td>
+            </tr>
+            <tr>
+                <td> coefficient:</td> <td> {{ form_widget(form.coefficient) }}</td>
+            </tr>
+            <tr>
+                <td> Description:</td> <td> {{ form_widget(form.description) }}</td>
+            </tr>
+
+
+            <tr>
+                <td> </td>
+                <td>
+
+                    <input type="submit" value="modifier"></td>
+
+            </tr>
+        </table>
+    </center>
+
+    {{ form_end(form) }}
+
+{% endblock %}
