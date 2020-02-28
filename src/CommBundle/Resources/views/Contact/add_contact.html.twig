@@ -1,0 +1,52 @@
+
+
+    <br>
+    <br>
+    <br>
+    <center>
+
+        <h1> Contactez-Nous </h1>
+
+    </center>
+    <br>
+    <br>
+    <br>
+    <center>
+        {{ form_start(form) }}
+        <table>
+
+            <tr>
+                <td> Nom:</td> <td> {{ form_widget(form.nom) }}</td>
+            </tr>
+            <tr>
+                <td> Prénom:</td> <td> {{ form_widget(form.prenom) }}</td>
+            </tr>
+            <tr>
+                <td> Adresse Email:</td> <td> {{ form_widget(form.email) }}</td>
+
+            <tr>
+            <tr>
+                <td> Téléphone:</td> <td> {{ form_widget(form.telephone) }}</td>
+            </tr>
+            <tr>
+
+            <tr>
+                <td> Texte:</td> <td> {{ form_widget(form.texte) }}</td>
+            </tr>
+            <tr>
+
+
+
+
+
+            <td> </td>
+            <td>
+
+                <input type="submit" value="Ajouter"></td>
+
+            </tr>
+        </table>
+    </center>
+
+    {{ form_end(form) }}
+

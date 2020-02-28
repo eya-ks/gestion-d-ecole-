@@ -1,0 +1,57 @@
+------------------------------------------------------------------------------------------------------
+modifier
+{% extends 'default/index.html.twig' %}
+{% block  changer  %}
+    <br>
+    <br>
+    <br>
+    <center>
+
+        <h1> Modifier un message </h1>
+
+    </center>
+    <br>
+    <br>
+    <br>
+    <center>
+        {{ form_start(form) }}
+        <table>
+
+            <tr>
+                <td> Nom:</td> <td> {{ form_widget(form.nomcontact) }}</td>
+            </tr>
+            <tr>
+                <td> Prénom:</td> <td> {{ form_widget(form.prenomcontact) }}</td>
+            </tr>
+            <tr>
+                <td> Adresse Email:</td> <td> {{ form_widget(form.emailcontact) }}</td>
+
+            <tr>
+            <tr>
+                <td> Téléphone:</td> <td> {{ form_widget(form.telcontact) }}</td>
+            </tr>
+            <tr>
+
+            <tr>
+                <td> Texte:</td> <td> {{ form_widget(form.textecontact) }}</td>
+            </tr>
+            <tr>
+
+
+
+
+            <tr>
+                <td>  Id d'émetteur :</td> <td> {{ form_widget(form.iduser) }}</td>
+            </tr>
+            <td> </td>
+            <td>
+
+                <input type="submit" value="Modifier"></td>
+
+            </tr>
+        </table>
+    </center>
+
+    {{ form_end(form) }}
+
+{% endblock %}

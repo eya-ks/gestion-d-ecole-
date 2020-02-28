@@ -1,0 +1,42 @@
+
+{% block  changer  %}
+    <br>
+    <br>
+    <br>
+    <center>
+
+        <h1> Ajouter une Réclamation</h1>
+
+    </center>
+    <br>
+    <br>
+    <br>
+    <center>
+        {{ form_start(form) }}
+        <table>
+
+            <tr>
+                <td> Contenu:</td> <td> {{ form_widget(form.contenureclamation) }}</td>
+            </tr>
+            <tr>
+                <td> Date Envoi:</td> <td> {{ form_widget(form.dateenvoireclamation) }}</td>
+            </tr>
+            <tr>
+                <td> Date Reponse:</td> <td> {{ form_widget(form.datereponsereclamation) }}</td>
+
+            <tr>
+            <tr>
+                <td>  Id d'émetteur :</td> <td> {{ form_widget(form.iduser) }}</td>
+            </tr>
+                <td>
+
+                <td>
+
+                    <input type="submit" value="Ajouter"></td>
+
+            </tr>
+        </table>
+    </center>
+    {{ form_end(form) }}
+
+{% endblock %}

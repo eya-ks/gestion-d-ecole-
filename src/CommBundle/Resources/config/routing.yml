@@ -1,0 +1,38 @@
+comm_homepage:
+    path:     /
+    defaults: { _controller: CommBundle:Default:index }
+
+read_reclamation:
+    path:     /readReclamation
+    defaults: { _controller: CommBundle:Communication:readReclamation }
+
+add_reclmation:
+    path:     /addReclmation
+    defaults: { _controller: CommBundle:Communication:addReclmation }
+
+update_reclamation:
+    path:     /updateReclamation/{id}
+    defaults: { _controller: CommBundle:Communication:updateReclamation }
+
+delete_reclamation:
+    path:     /deleteReclamation/{id}
+
+    defaults: { _controller: CommBundle:Communication:deleteReclamation }
+
+add_contact:
+    path:     /addContact
+    defaults: { _controller: CommBundle:Contact:addContact }
+
+delete_contact:
+    path:     /deleteContact/{id}
+    defaults: { _controller: CommBundle:Contact:deleteContact }
+
+update_contact:
+    path:     /updateContact/{id}
+    defaults: { _controller: CommBundle:Contact:updateContact }
+
+read_contact:
+    path:     /readContact
+    defaults: { _controller: CommBundle:Contact:readContact }
+
+
