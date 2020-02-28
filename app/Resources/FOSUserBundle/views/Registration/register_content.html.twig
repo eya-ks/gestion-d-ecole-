@@ -1,8 +1,23 @@
 {% trans_default_domain 'FOSUserBundle' %}
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-pic js-tilt" data-tilt>
+                <img src="{{asset('login_register/images/img-01.png')}}" alt="IMG">
+            </div>
+            <div>
+                <span class="login100-form-title">
+                   Register
+                </span>
+                {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+                {{ form_widget(form) }}
+                <div>
+                    <input class="btn btn-success" type="submit" value="{{ 'registration.submit'|trans }}" />
+                </div>
+                {{ form_end(form) }}
 
-{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+            </div>
+        </div>
     </div>
-{{ form_end(form) }}
+</div>
+

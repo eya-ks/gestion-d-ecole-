@@ -1,29 +1,74 @@
-{% extends 'default/index.html.twig' %}
-{% block  changer  %}
+{% extends 'front.html.twig' %}
 
+{% block changer %}
+<br>
+<br>
+<br>
+<div class="container">
+        <div class="col-md-12">
+                <div class="card">
+{#                        <h5> <i style="align-content: center">Chercher un menu selon son item :</i></h5>#}
+                        <div class="sidebar-search">
 
+                                <div class="input-group custom-search-form">
 
-
-        <h5> <i style="align-content: center">Chercher un menu selon son item :</i></h5>
-
-        <div class="sidebar-search">
-
-                <div class="input-group custom-search-form">
-
-                        <input type="text" id="search" class="form-control" placeholder="Search here">
-                </div>
-                <!-- /input-group -->
-        </div>
-        <ul class="nav" id="side-menu">
-                <li>
-                        <a href="#"> resultat recherche <span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level" id="entitiesNav">
+                                        <input type="text" id="search" class="form-control" placeholder="Search here">
+                                </div>
+                                <!-- /input-group -->
+                        </div>
+                        <ul class="nav" id="side-menu">
+                                <li>
+                                        <a href="#">  <span class="fa arrow"></span></a>
+                                        <ul class="nav nav-second-level" id="entitiesNav">
+                                        </ul>
+                                </li>
                         </ul>
-                </li>
-        </ul><br><br><br><br>
+                        <br>
+                        <br>
+                        <div class="col-md-12">
+                                <div class="card">
+                                        <div class="card-header card-header-primary">
+                                                <h4 class="card-title ">liste des menus</h4>
+                                                {#                        <p class="card-category"> Here is a subtitle for this table</p>#}
+                                        </div>
+                                        <div class="card-body">
+                                                <div class="table-responsive">
+                                                        <table class="table">
+                                                                <thead class=" text-primary">
+                                                                <th>  Plat du menu </th>
+                                                                <th>  Prix</th>
+                                                                <th>  </th>
+                                                                <th>ajouter </th>
+                                                                <th >modifier</th>
+                                                                <th >supprimer</th>
 
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+                                                                <tbody>
+                                                                {% for m in menu %}
 
+
+                                                                <tr>
+
+                                                                        <td>{{ m.items}}</td>
+                                                                        <td>{{ m.prix }}</td>
+                                                                        <td> <img class="img-fluid rounded" src="{{ asset('menu/images.jfif') }}" >  </td>
+{#                                                                        <td> <img src="{{ asset('img/' ~ f.image) }} " style="width: 50px;"></td>#}
+                                                                        <td>   <a href= "{{ url('addmenu',{'id':m.id })  }}"> Ajouter un menu !</a> </td>
+                                                                        <td>  <a href= "{{ url('updatemenu',{'id':m.id })  }}"> Modifier ce menu !</a> </td>
+                                                                        <td>  <a href= "{{ url('deletemenu',{'id':m.id })  }}"> Supprimer ce menu !</a> </td>
+                                                                </tr>
+                                                                {% endfor %}
+                                                                </tbody>
+
+                                                        </table>
+
+                                                </div>
+                                                <hr>
+                                                {# display navigation #}
+
+                                        </div>
+                                </div>
+                        </div>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script type="text/javascript">
                 jQuery(document).ready(function() {
                         var searchRequest = null;
@@ -51,7 +96,7 @@
                                                                                 if (key === 'posts') {
                                                                                         if (id !== 'error') {
                                                                                                 console.log(value[1]);
-                                                                                                entitySelector.append('<ul><li><b>'+value[0]+'</b><a href="/detailedpost/'+id+'">'+'<br>'+'<img src="/menu/restau.jpg/'+value[2]+'" style="width: 50px; height: 50px"/>'+'<br>'+'</a></li></ul>');
+                                                                                                entitySelector.append('<ul><li><b>'+value[0]+'</b><a href="/vie/detailedpost/'+id+'">'+'<br>'+'<img src="/menu/restau.jpg/'+value[2]+'" style="width: 50px; height: 50px"/>'+'<br>'+'</a></li></ul>');
 
 
                                                                                         } else {
@@ -70,18 +115,5 @@
 
 
 
+{% endblock %}
 
-
-    <div class="post-container">
-<h3 style="color: #8959A8" >Liste des menus : </h3>
-{% for m in menu %}
-        <h4>Items : {{ m.items}}</a></h4>
-        <h4> Prix : {{ m.prix }} DT </a> </h4>
-        <img class="img-fluid rounded" src="{{ asset('menu/images.jfif') }}" > <br>
-        <td><a href= "{{ url('deletemenu',{'id':m.id })  }}"> Supprimer ce menu !</a> <br></td> <br>
-        <td><a href= "{{ url('updatemenu',{'id':m.id })  }}"> Modifier ce menu !</a> <br></td><br>
-        <td><a href= "{{ url('addmenu',{'id':m.id })  }}"> Ajouter un menu !</a> <br></td><br>
-
-{% endfor %}
-</div>
-        {% endblock %}

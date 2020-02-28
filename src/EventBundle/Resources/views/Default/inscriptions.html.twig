@@ -1,0 +1,50 @@
+{% extends 'front.html.twig' %}
+{% block changer %}
+            <br>
+            <br>
+            <br>
+            <br>
+           
+ 
+           
+
+            
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title ">liste des inscriptions</h4>
+                        {#                        <p class="card-category"> Here is a subtitle for this table</p>#}
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                <th>  Demande </th>
+                                <th>  Etudiant </th>
+                                <th> Club </th>
+                                <th> Action </th>
+                                
+                                <tbody>
+                                {% for i in inscriptions %}
+
+
+                                    <tr>
+
+                                        <td>{{ i.id }}</td>
+                                        <td>{{ i.iduser }}</td>
+                                        <td> {{ i.idclub }} </td>
+                                        <td><a href="{{ path('valide_insc',{'id':i.id}) }}" >  <button class="btn btn-primary">Valider</button></a>
+                                        <a href="{{ path('refue_insc',{'id':i.id}) }}" >  <button class="btn btn-danger"> refuser</button></a></td>
+                                    </tr>
+
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                                
+                        </div>
+                        <hr>
+                      
+                    </div>
+                </div>
+            </div>
+        {% endblock changer %}

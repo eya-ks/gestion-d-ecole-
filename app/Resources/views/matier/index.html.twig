@@ -1,0 +1,60 @@
+{% extends 'front.html.twig' %}
+
+{% block changer %}
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="col-md-12">
+        <div class="card">
+
+            <div class="card-header card-header-primary">
+                <h4 class="card-title ">liste des matiers</h4>
+                {#                        <p class="card-category"> Here is a subtitle for this table</p>#}
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                        <tr>
+                        <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Coff</th>
+                <th>Note</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for matier in matiers %}
+            <tr>
+                <td><a href="{{ path('matier_show', { 'id': matier.id }) }}">{{ matier.id }}</a></td>
+                <td>{{ matier.nom }}</td>
+                <td>{{ matier.coff }}</td>
+                <td>{{ matier.note }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('matier_show', { 'id': matier.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('matier_edit', { 'id': matier.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <ul>
+        <li>
+            <a href="{{ path('matier_new') }}">Create a new matier</a>
+        </li>
+    </ul>
+{% endblock %}

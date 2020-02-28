@@ -1,0 +1,45 @@
+{% extends 'front.html.twig' %}
+
+{% block changer %}
+<br>
+<br>
+<br>
+<br>
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header card-header-primary">
+            <h4 class="card-title ">liste des notes</h4>
+            {#                        <p class="card-category"> Here is a subtitle for this table</p>#}
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class=" text-primary">
+                    <th>MATIERE</th>
+                    <th>Enseignant</th>
+                    <th> DS</th>
+                    <th>CC</th>
+                    <th>examen</th>
+                    <th>moyenne </th>
+                    <th>modifier</th>
+                    <th>supprimer</th>
+                    <body>
+                    {% for f in  notes %}
+                        <tr>
+                            <td> {{f.matiere.nomMat }}</td>
+                            <td> {{f.matiere.teacher }}</td>
+                            <td> {{ f.cc }} </td>
+                            <td>{{ f.ds }}</td>
+                            <td>{{ f.examen }}</td>
+                            <td>{{ f.moyNot }}</td>
+                            <td><a href="{{ path('note_edit',{'idNote':f.idNote}) }}" >  <button class="btn btn-secondary">Modifier</button></a></td>
+                            <td><a href="{{ path('note_delete',{'note':f.idNote}) }}" >  <button class="btn btn-secondary"> Supprimer</button></a></td>
+                        </tr>
+                    {% endfor %}
+                    </body>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

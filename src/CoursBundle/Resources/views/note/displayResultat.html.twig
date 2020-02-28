@@ -1,0 +1,34 @@
+{% extends 'front.html.twig' %}
+
+{% block changer %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title ">Résultat</h4>
+                {#                        <p class="card-category"> Here is a subtitle for this table</p>#}
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+
+                        <th>moyenne général:</th>
+                        <th>avis</th>
+                        <body>
+                         {% for f in bulletin %}
+                           <tr>
+                               <td>{{ f.moyenne }}</td>
+                               <td>{{ f.appreciation }}</td>
+                           </tr>
+                        {% endfor %}
+                        </body>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

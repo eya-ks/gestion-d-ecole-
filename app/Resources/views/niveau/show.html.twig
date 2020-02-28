@@ -1,0 +1,81 @@
+{% extends 'front.html.twig' %}
+
+{% block changer %}
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="col-md-12">
+        <div class="card">
+
+            <div class="card-header card-header-primary">
+                <h4 class="card-title "> Classe</h4>
+                {#                        <p class="card-category"> Here is a subtitle for this table</p>#}
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                        <tbody>
+                        <tr>
+                <th>Id</th>
+                <td>{{ niveau.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ niveau.nom }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header"><h3>List Eleve</h3></div>
+                <div class="card-body">
+                    <table class="table">
+                        <tr>
+                            <th>Nom</th>
+                            <th>prenom</th>
+                            <th>nembre Absence</th>
+
+                        </tr>
+
+                            {% for eleve in niveau.eleve %}
+                                {% if  eleve   %}
+                                     <td>
+                                         {{ eleve.nom}}
+                                     </td>
+                                     <td>
+                                         {{ eleve.prenom}}
+                                     </td>
+                                     <td>
+
+                                     <a href="{{ path('add_abs',{'id':eleve.id}) }}">{{  eleve.abs }}</a>{% else %}{{ eleve.abs }}
+
+                                     </td>
+                                {% endif %}
+                                 {% endfor %}
+
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <ul>
+        <li>
+            <a href="{{ path('niveau_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('niveau_edit', { 'id': niveau.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

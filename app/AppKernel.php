@@ -17,8 +17,19 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+            new Nomaya\SocialBundle\NomayaSocialBundle(),
             new AppBundle\AppBundle(),
+            new ClassBundle\ClassBundle(),
+            new EventBundle\EventBundle(),
+            new CoursBundle\CoursBundle(),
+            new WBW\Bundle\HighchartsBundle\HighchartsBundle(),
             new VieEleveBundle\VieEleveBundle(),
+            new AncaRebeca\FullCalendarBundle\FullCalendarBundle(),
+
+
 
         ];
 

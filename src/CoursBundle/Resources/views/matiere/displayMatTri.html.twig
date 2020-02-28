@@ -1,0 +1,43 @@
+{% extends 'default/index.html.twig' %}
+{% block  changer  %}
+<br>
+<br>
+<br>
+<br>
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header card-header-primary">
+            <h4 class="card-title ">liste des matieres triées </h4>
+            {#                       <p class="card-category"> Here is a subtitle for this table</p>#}
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class=" text-primary">
+                    <th>  Nom Matiére</th>
+
+                    <th>coefficient</th>
+                    <th>  Description</th>
+                    <th >modifier</th>
+                    <th >supprimer</th>
+                    <body>
+                    {% for f in matieres %}
+
+
+                    <tr>
+                        <td> {{ f.nomMat }} </td>
+
+                        <td> {{ f.coefficient }} </td>
+                        <td> {{ f.description }} </td>
+                        <td><a href="{{ path('matiere_edit',{'id':f.id}) }}" >  <button class="btn btn-secondary">Modifier</button></a></td>
+                        <td><a href="{{ path('matiere_delete',{'matiere':f.id}) }}" >  <button class="btn btn-secondary"> Supprimer</button></a></td>
+                    </tr>
+
+                    {% endfor %}
+                    </body>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock changer %}

@@ -1,0 +1,54 @@
+{% extends 'front.html.twig' %}
+
+{% block changer %}
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="col-md-12">
+        <div class="card">
+
+            <div class="card-header card-header-primary">
+                <h4 class="card-title ">liste des Punitions</h4>
+                {#                        <p class="card-category"> Here is a subtitle for this table</p>#}
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                        <tr>
+                <th>Id</th>
+                <th>Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for punichment in punichments %}
+            <tr>
+                <td><a href="{{ path('punichment_show', { 'id': punichment.id }) }}">{{ punichment.id }}</a></td>
+                <td>{{ punichment.Type }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('punichment_show', { 'id': punichment.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('punichment_edit', { 'id': punichment.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul>
+        <li>
+            <a href="{{ path('punichment_new') }}">Create a new punichment</a>
+        </li>
+    </ul>
+{% endblock %}

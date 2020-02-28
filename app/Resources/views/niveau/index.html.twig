@@ -1,0 +1,59 @@
+{% extends 'front.html.twig' %}
+
+{% block changer %}
+    <br>
+    <br>
+    <br>
+    <br>
+<div class="container">
+    <div class="col-md-12">
+        <div class="card">
+
+            <div class="card-header card-header-primary">
+                <h4 class="card-title ">liste des classes</h4>
+                {#                        <p class="card-category"> Here is a subtitle for this table</p>#}
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                        <tr>
+            <tr>
+                <th>Nom</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for niveau in niveaus %}
+            <tr>
+                <td><a href="{{ path('niveau_show', { 'id': niveau.id }) }}">{{ niveau.id }}</a></td>
+                <td>{{ niveau.nom }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('niveau_show', { 'id': niveau.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('niveau_edit', { 'id': niveau.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="navigation">
+        {{ knp_pagination_render(niveaus) }}
+    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <ul>
+        <li>
+            <a href="{{ path('niveau_new') }}">Create a new niveau</a>
+        </li>
+    </ul>
+{% endblock %}

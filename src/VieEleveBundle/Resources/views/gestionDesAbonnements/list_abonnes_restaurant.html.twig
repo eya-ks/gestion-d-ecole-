@@ -1,4 +1,5 @@
-{% extends 'default/index.html.twig' %}
+{% extends 'front.html.twig' %}
+
         {% block  changer  %}
             <br>
             <br>
@@ -15,10 +16,11 @@
                         <div class="table-responsive">
                             <table class="table">
                                 <thead class=" text-primary">
+
                                 <th>  Email</th>
                                 <th>  Nom Utilisateur</th>
                                 <th>Solde</th>
-                                <th>Mot De Passe</th>
+{#                                <th>Mot De Passe</th>#}
                                 <th >Durée De L'abonnement</th>
 
                                 <tbody>
@@ -29,7 +31,7 @@
                                         <td> {{ f.email }} </td>
                                         <td> {{ f.username }} </td>
                                         <td> {{ f.solde }} </td>
-                                        <td> {{ f.password }} </td>
+{#                                        <td> {{ f.password }} </td>#}
                                         <td> {{ f.dureeAbonnement }} </td>
 
                                     </tr>

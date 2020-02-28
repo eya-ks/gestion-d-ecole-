@@ -1,33 +1,48 @@
-{% extends 'default/index.html.twig' %}
-{% block  changer  %}
-<h2 style="color: #8959A8" >Liste des bus : </h2>
+{% extends 'front.html.twig' %}
 
-<div class="post-container">
+{% block changer %}
 
-
+    <br>
+    <br>
+    <br>
+    <div class="container">
+    <div class="col-md-12">
+    <div class="card">
+    <div class="card-header card-header-primary">
+        <h4 class="card-title ">liste des Bus </h4>
+        {#                        <p class="card-category"> Here is a subtitle for this table</p>#}
+    </div>
+    <div class="card-body">
+    <div class="table-responsive">
+    <table class="table">
+    <thead class=" text-primary">
+    <th>  Date d'inscription </th>
+    <th>  Fin de l'inscription </th>
+    <th> Montant  </th>
+    <th >supprimer</th>
+    <th >modifier</th>
+    <th>ajouter </th>
+    <tbody>
     {% for m in transport %}
 
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-        <div class="featured-box">
-            <figure>
-                <div class="homes-tag featured"></div>
-                <div class="homes-tag rent"><i class="lni-heart"></i> </div>
+    <tr>
 
-            </figure>
-            <div class="content-wrapper">
-                <div class="feature-content">
-                    <h4>Date d'inscription : {{ m.dateInscription | date}}</a></h4>
-                    <h4> Fin de l'inscription : {{ m.finInscription | date }}  </a> </h4>
-                    <h4> Montant : {{ m.montant}} DT </a> </h4>
-
+        <td>{{ m.dateInscription | date}}</td>
+        <td>  {{ m.finInscription | date }} </td>
+        <td>  {{ m.montant}} DT  </td>
                     <td><a href= "{{ url('deletetransport',{'id':m.id })  }}"> Supprimer  !</a> <br></td> <br>
                     <td><a href= "{{ url('updatetransport',{'id':m.id })  }}"> Modifier  !</a> <br></td><br>
                     <td><a href= "{{ url('addtransport',{'id':m.id })  }}"> Ajouter  !</a> <br></td><br>
+    </tr>
 
-                </div>
-            </div>
             {% endfor %}
+    </table>
 
+    </div>
+        <hr>
+    </div>
+    </div>
+    </div>
 
 
 {% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'front.html.twig' %}
+
+{% block  changer  %}
+    <br>
+    <br>
+    <br>
+    <center>
+
+        <h1> Modifier une note </h1>
+
+    </center>
+    <br>
+    <br>
+    <br>
+    <center>
+        {{ form_start(form) }}
+        <table>
+            <tr>
+                <td> ds:</td> <td> {{ form_widget(form.ds) }}</td>
+            </tr>
+            <tr>
+                <td>cc</td> <td> {{ form_widget(form.cc) }}</td>
+            </tr>
+            <tr>
+                <td>examen</td> <td> {{ form_widget(form.examen) }}</td>
+            </tr>
+            <tr>
+                <td>matiere</td> <td> {{ form_widget(form.matiere) }}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Ajouter"></td>
+            </tr>
+        </table>
+    </center>
+    {{ form_end(form) }}
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'front.html.twig' %}
+{% block changer %}
+    <div class="container" style="margin-top:100px;">
+    <div class="col-md-8">
+   <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Evenement</h4>
+                  <p class="card-category">Ajouter un evenement</p>
+                </div>
+                <div class="card-body">
+                 {{ form_start(form) }}
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Nom evenement</label>
+                          {{ form_widget(form.nomEvent,{ 'attr': {'class': 'form-control'} }) }}
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Description</label>
+                          {{ form_widget(form.description,{ 'attr': {'class': 'form-control'}}) }}
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Place disponible</label>
+                           {{ form_widget(form.placeDispo,{ 'attr': {'class': 'form-control'}}) }}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          
+                         {{ form_widget(form.dateevent,{ 'attr': {'class': 'form-control'}}) }}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          
+                          {{ form_widget(form.heureevent,{ 'attr': {'class': 'form-control'}}) }}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-md-12">
+                                        <div >
+                                        
+                                        {{ form_widget(form.image) }}
+                                        </div>
+                            </div>
+                    </div>
+                      
+                      
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                                <div class="form-group bmd-form-group">
+                                
+                                {{ form_widget(form.club,{ 'attr': {'class': 'form-control'}}) }}
+                                </div>
+                      </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary pull-right">Ajouter</button>
+                    <div class="clearfix"></div>
+                   {{ form_end(form) }}
+                </div>
+              </div>
+              </div>
+              </div>
+
+
+ 
+{% endblock %}

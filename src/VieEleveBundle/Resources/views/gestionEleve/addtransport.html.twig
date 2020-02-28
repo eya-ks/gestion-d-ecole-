@@ -1,12 +1,21 @@
-{% extends 'default/index.html.twig' %}
-{% block  changer  %}
-{% block body %}
+{% extends 'front.html.twig' %}
 
-    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <center><h2 class="contact-title">
-                <br><br>
-                Ajouter un moyen de transport !
-            </h2></center>
+{% block changer %}
+{#    {% if is_granted('IS_AUTHENTICATED_FULLY') %}#}
+
+<br>
+<br>
+<br>
+
+<div class="container" style="margin-top:100px;">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">Transport  </h4>
+                <p class="card-category">Ajouter un moyen de transport ! </p>
+            </div>
+            <div class="card-body">
+ {% if is_granted('IS_AUTHENTICATED_FULLY') %}
         <div class="form-group has-error">
             {{ form_start(form) }}
 
@@ -16,12 +25,17 @@
             <br> <br> <br>
             {{ form_widget(form.montant,{'attr':{'type':'text','class':'form-control','placeholder':'Montant...'}}) }}
             <br> <br> <br>
-           {# {{ form_widget(form.eleve_transport,{'attr':{'type':'integer','class':'form-control','placeholder':'Montant...'}}) }}
-            <br> <br> <br>#}
+{#            {{ form_widget(form.eleve_transport,{'attr':{'type':'integer','class':'form-control','placeholder':'Montant...'}}) }}#}
+            <br> <br> <br>
             <center> {{ form_widget(form.Submit,{'attr':{'type':'text','class':'btn btn-common','placeholder':'Submit...'}}) }}        </center>
             <br> <br> <br>
             {{ form_end(form) }}
         </div>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
     {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
         <br><br><br>
 
@@ -34,5 +48,4 @@
 
         </div>
     {% endif %}
-{% endblock %}
 {% endblock %}

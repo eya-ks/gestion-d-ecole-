@@ -1,0 +1,40 @@
+{% extends 'front.html.twig' %}
+
+{% block changer %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row align-content-center" style="padding-left: 50px">
+        <div class="col col-xl-8">
+            <div class="card">
+          {% if notifications|length %}
+                    <div class="card-body">
+                        <h5>Unread notifications</h5>
+                    </div>
+
+                    <ul class="list-group list-group-flush">
+
+                        {% for notification in notifications %}
+                            <li>
+                                {{ notification.eleve.nom  }} you have {{ notification.eleve.abs }} Absens
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ path('notification_acknowledge', {'id': notification.id}) }}"
+                                   class="btn btn-sm btn-primary float-right">
+                                    OK
+                                </a>
+
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <div class="card-body">
+                        You have not notified
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'front.html.twig' %}
+
+{% block changer %}
+
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="col-md-12">
+        <div class="card">
+
+            <div class="card-header card-header-primary">
+                <h4 class="card-title "> Enseignants</h4>
+                {#                        <p class="card-category"> Here is a subtitle for this table</p>#}
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                        <tbody>
+                        <tr>
+                <th>Id</th>
+                <td>{{ teacher.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ teacher.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ teacher.prenom }}</td>
+            </tr>
+        </tbody>
+    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul>
+    <ul>
+        <li>
+            <a href="{{ path('teacher_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('teacher_edit', { 'id': teacher.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+
+{% endblock %}

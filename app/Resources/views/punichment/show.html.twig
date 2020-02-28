@@ -1,0 +1,54 @@
+{% extends 'front.html.twig' %}
+
+{% block changer %}
+
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="col-md-12">
+        <div class="card">
+
+            <div class="card-header card-header-primary">
+                <h4 class="card-title ">Punition </h4>
+                {#                        <p class="card-category"> Here is a subtitle for this table</p>#}
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                        <tbody>
+                        <tr>
+                <th>Id</th>
+                <td>{{ punichment.id }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ punichment.Type }}</td>
+            </tr>
+            <tr>
+                <th>Eleve</th>
+                <td>{{ punichment.eleve }}</td>
+            </tr>
+        </tbody>
+    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul>
+        <li>
+            <a href="{{ path('punichment_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('punichment_edit', { 'id': punichment.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+
+{% endblock %}

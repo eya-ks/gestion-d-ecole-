@@ -1,0 +1,26 @@
+{% extends 'front.html.twig' %}
+
+{% block changer %}
+<div class="container" style="margin-top:100px;">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">Matiere</h4>
+                <p class="card-category">ajouter une matiere</p>
+            </div>
+            <div class="card-body">
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('matier_index') }}">Back to the list</a>
+        </li>
+    </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
